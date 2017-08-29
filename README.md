@@ -1,39 +1,8 @@
-# plsos2-extensions
-
-Set of Chrome extensions for PLSos2.
-
-NOTE: Any provided images are subject to change.
-
-## pls-orders
-
-Integrates printing files directly to an order's research tab. Each pinned order that contains unfulfilled research will create a printer for each research item. See the example image below.
-
-![printer-list](printer-list.png)
-
-# Installation
-
-Make sure you download and install [yarn](https://yarnpkg.com). We don't use `npm` no' mo'!
-
-```bash
-yarn install
-yarn test
-```
-
-1. Navigate to [Chrome Extensions](chrome://extensions).
-2. Ensure that `Develper mode` is checked.
-3. Click on `Load unpacked extension...` and navigate to your `dist` folder.
-
-In order to speedup the developer inner loop, a watch options is provided to automatically build changes.
-
-```bash
-yarn watch
-```
-
-![pls-orders-extension](pls-orders-extension.png)
+# chromie
 
 # License
 
-Copyright 2017 PropLogix <support@proplogix.com>
+Copyright 2017 NativeCode Development <support@nativecode.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
 documentation files (the "Software"), to deal in the Software without restriction, including without
