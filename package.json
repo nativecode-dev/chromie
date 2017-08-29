@@ -1,0 +1,55 @@
+{
+  "author": "support@nativecoe.com",
+  "description": "Chromie",
+  "homepage": "https://www.nativecod.com",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "chromie",
+  "version": "0.1.0",
+  "dependencies": {
+    "chrome-extension-async": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.1",
+    "@types/chrome": "0.0.47",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^8.0.13",
+    "chai": "^4.1.0",
+    "cross-env": "^5.0.1",
+    "eslint": "^4.2.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.3",
+    "rimraf": "^2.6.1",
+    "ts-node": "^3.2.0",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.1"
+  },
+  "nyc": {
+    "all": true,
+    "exclude": [
+      "src/**/*.spec.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "src/**/*.ts"
+    ],
+    "instrument": true,
+    "sourceMap": true
+  },
+  "scripts": {
+    "build": "cross-env BUILD_ENV=production tsc --project tsconfig.json",
+    "prebuild": "yarn run lint && rimraf dist",
+    "lint": "tslint src/",
+    "test": "cross-env DEBUG= BUILD_ENV=production nyc mocha --opts mocha.opts",
+    "pretest": "yarn run build",
+    "coverage": "cross-env DEBUG= BUILD_ENV=production nyc --reporter=teamcity mocha --opts mocha.opts",
+    "precoverage": "yarn run build"
+  }
+}

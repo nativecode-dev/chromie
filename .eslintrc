@@ -1,0 +1,10 @@
+{
+  "extends": "standard",
+  "overrides": [{
+    "files": ["tests/**/*.js"],
+    "excludedFiles": ["dist/**/*.js"],
+    "rules": {
+      "space-before-function-paren": false
+    }
+  }]
+}
