@@ -14,6 +14,7 @@
     "@types/chrome": "0.0.47",
     "@types/mocha": "^2.2.41",
     "@types/node": "^8.0.13",
+    "@types/sinon-chrome": "^0.2.28",
     "chai": "^4.1.0",
     "cross-env": "^5.0.1",
     "eslint": "^4.2.0",
@@ -25,7 +26,9 @@
     "mocha": "^3.4.2",
     "nyc": "^11.0.3",
     "rimraf": "^2.6.1",
+    "sinon-chrome": "^2.2.1",
     "ts-node": "^3.2.0",
+    "tsconfig-paths": "^2.2.0",
     "tslint": "^5.5.0",
     "typescript": "^2.4.1"
   },
@@ -44,12 +47,10 @@
     "sourceMap": true
   },
   "scripts": {
-    "build": "cross-env BUILD_ENV=production tsc --project tsconfig.json",
+    "build": "cross-env DEBUG= tsc --project tsconfig.json",
     "prebuild": "yarn run lint && rimraf dist",
     "lint": "tslint src/",
-    "test": "cross-env DEBUG= BUILD_ENV=production nyc mocha --opts mocha.opts",
-    "pretest": "yarn run build",
-    "coverage": "cross-env DEBUG= BUILD_ENV=production nyc --reporter=teamcity mocha --opts mocha.opts",
-    "precoverage": "yarn run build"
+    "test": "cross-env DEBUG= NODE_ENV=test nyc mocha --opts mocha.opts",
+    "pretest": "yarn run build"
   }
 }

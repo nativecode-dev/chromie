@@ -4,6 +4,7 @@ import { expect } from 'chai'
 import { Envelope, instanceOfEnvelope } from './Envelope'
 
 describe('when using Envelopes', () => {
+
   it('should check instanceOfEnvelope is valid', () => {
     const envelope = {
       message: {},
@@ -18,4 +19,5 @@ describe('when using Envelopes', () => {
     const envelope = {}
     expect(instanceOfEnvelope(envelope)).to.equal(false)
   })
+
 })

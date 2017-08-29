@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "declaration": false,
     "diagnostics": true,
     "emitDecoratorMetadata": true,
@@ -10,9 +10,10 @@
     "lib": ["dom", "es2015"],
     "module": "commonjs",
     "moduleResolution": "node",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "outDir": "dist",
     "paths": {
+      "*": ["*"],
       "@messaging/*": ["src/messaging/*"],
       "@src/*": ["src/*"]
     },

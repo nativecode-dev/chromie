@@ -1,4 +1,4 @@
-import { MessageType } from '@messaging/Envelope'
+import { Envelope, MessageType } from '@messaging/Envelope'
 import { MessageBroker } from '@messaging/MessageBroker'
 import { MessageHandler } from '@messaging/MessageHandler'
 
@@ -18,5 +18,15 @@ export class MessageClient extends MessageBroker {
 
   public off(type: MessageType): void {
     this.removeHandler(type)
+  }
+
+  public send<T>(type: MessageType, message: T, recipient: string): void {
+    const envelope: Envelope = {
+      message,
+      recipients: [recipient],
+      sender: this.id,
+      type,
+    }
+    this.port.postMessage(envelope)
   }
 }
