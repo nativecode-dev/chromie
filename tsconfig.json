@@ -15,6 +15,7 @@
     "paths": {
       "*": ["*"],
       "@messaging/*": ["src/messaging/*"],
+      "@printing/*": ["src/printing/*"],
       "@src/*": ["src/*"]
     },
     "pretty": true,
